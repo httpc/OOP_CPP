@@ -23,6 +23,10 @@ public:
 	{
 		this->y = y;
 	}
+	double Distance(Point b)
+	{
+		return (sqrt(((x-b.x) * (x-b.x)) + (y - b.y) * (y-b.y)));
+	}
 };
 class Point3D :public Point
 {
@@ -32,24 +36,32 @@ public:
 	{
 		return z;
 	}
+	
 	void set_z(double z)
 	{
 		this->z = z;
 	}
 };
+double Dis (Point3D A, Point3D B) 
+{
 
+	return sqrt((A.get_x() - B.get_x())*(A.get_x() - B.get_x())+ (A.get_y() - B.get_y()) * (A.get_y() - B.get_y()));
+}
 void main()
 {
 	
-	Point A; 
-	
+	Point3D A;
+	Point3D B;
 	
 	A.set_x(2);
 	A.set_y(4);
-	cout << A.get_x() << '\t' << A.get_y() << endl;
+	A.set_z(3);
+	B.set_x(1);
+	B.set_y(1);
+	B.set_z(1);
 
-	Point* pA = &A;
-	cout << pA->get_x() << '\t' << A.get_y() << endl;
-	Point3D B;
-	B.
+	Point3D* pA = &A;
+	cout << A.get_x() << '\t' << A.get_y() <<'\t'<< A.get_z() << endl;
+	cout << A.Distance(B) << endl;
+	cout<<Dis(A, B)<<endl;
 }
