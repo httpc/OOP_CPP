@@ -25,7 +25,7 @@ public:
 	}
 	double Distance(Point b)
 	{
-		return (sqrt(((x-b.x) * (x-b.x)) + (y - b.y) * (y-b.y)));
+		return (sqrt(((this->x-b.x) * (this->x-b.x)) + (this->y - b.y) * (this->y-b.y)));
 	}
 };
 class Point3D :public Point
